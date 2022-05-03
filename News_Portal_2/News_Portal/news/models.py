@@ -7,7 +7,6 @@ class Author(models.Model):
     rating = models.IntegerField(default = 0)
 
 
-
     def update_rating(self):
         calc = 0
         for obj in Post.objects.filter(author_id=self.pk):

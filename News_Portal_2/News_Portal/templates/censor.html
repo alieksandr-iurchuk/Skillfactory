@@ -1,0 +1,47 @@
+<!--&lt;!&ndash;@register.filter(name='censor')&ndash;&gt;-->
+<!--&lt;!&ndash;def censor(value):&ndash;&gt;-->
+<!--&lt;!&ndash;    cens_words = ['word1', 'word2']&ndash;&gt;-->
+<!--&lt;!&ndash;    text = set(value.split())&ndash;&gt;-->
+<!--&lt;!&ndash;    for i in text:&ndash;&gt;-->
+<!--&lt;!&ndash;        for j in cens_words:&ndash;&gt;-->
+<!--&lt;!&ndash;            if i == j:&ndash;&gt;-->
+<!--&lt;!&ndash;                return value.replace(i, '*' * len(i))&ndash;&gt;-->
+<!--&lt;!&ndash;    return value&ndash;&gt;-->
+
+<!--{% extends 'flatpages/default.html' %}-->
+
+<!--{% block title %}-->
+<!--News-->
+<!--{% endblock title %}-->
+
+<!--{% block content %}-->
+<!--   <h1>Все новости</h1>-->
+<!--   <hr>-->
+<!--   {% if news %}-->
+<!--       <table>-->
+<!--           <tr>-->
+<!--               <td>Название</td>-->
+<!--               <td>Описание</td>-->
+<!--               <td>Категория</td>-->
+<!--               <td>Цена</td>-->
+<!--               <td>Количество</td>-->
+<!--           </tr>-->
+
+<!--           {% for news_list in news %}-->
+<!--           <tr>-->
+<!--               <td>{{ news.name }}</td>-->
+<!--                &lt;!&ndash; Добавим специальный фильтр truncatechars,-->
+<!--                чтобы ограничить количество символов до 20.-->
+<!--                Все остальные символы превратятся в многоточие. &ndash;&gt;-->
+<!--               <td>{{ product.description|truncatechars:20 }}</td>-->
+<!--               <td>{{ product.category.name }}</td>-->
+<!--               <td>{{ product.price }}</td>-->
+<!--               <td>{{ product.quantity }}</td>-->
+<!--           </tr>-->
+<!--           {% endfor %}-->
+
+<!--       </table>-->
+<!--   {% else %}-->
+<!--       <h2>Товаров нет!</h2>-->
+<!--   {% endif %}-->
+<!--{% endblock content %}-->

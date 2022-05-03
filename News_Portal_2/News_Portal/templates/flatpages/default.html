@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Bare - Start Bootstrap Template</title>
+        <title>Главные новости</title>
 
         {% load static %}
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -30,10 +30,10 @@
                            </a>
                        </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="/posts/">posts</a>
+                           <a class="nav-link" href="/Posts/">NEWS</a>
                        </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="/post/">post</a>
+                           <a class="nav-link" href="/newsss/">newsss</a>
                        </li>
                    </ul>
                </div>
@@ -44,7 +44,7 @@
            <div class="row">
                <div class="col-lg-12 text-center">
                    {% block content %}
-                   {% include 'flatpages/posts.html' %}
+                   {% include 'news.html' %}
                    {% endblock content %}
                </div>
            </div>
