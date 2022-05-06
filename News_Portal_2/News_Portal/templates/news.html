@@ -1,6 +1,8 @@
 <!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
 {% extends 'flatpages/default.html' %}
 
+{% load censor %}
+
 <!-- Название у нас будет posts -->
 {% block title %}
 news
@@ -13,15 +15,15 @@ news
    и применяем к ней фильтр date. По назначению этот фильтр очень похож
    на метод strftime у объекта datetime в Python — вывод времени
    в указанном формате. -->
-   <h3>{{ time_now|date:'M d Y' }}</h3>
+   <h3>{{ time_now|date:'d M Y H: i' }}</h3>
    <h3>{{ news|length }}</h3>
    <hr>
    {% if news %}
        <table>
            <tr>
                <td>Название новости</td>
-               <td>Текст</td>
                <td>Дата загрузки</td>
+               <td>Текст</td>
            </tr>
 
            <!-- Для каждой новости будете генерироваться новая строчка,
@@ -35,8 +37,9 @@ news
                 полям объекта модели. Например, здесь мы выводим имя,
                 в следующем столбце описание, и т.д.  -->
                <td>{{ post.title }}</td>
-               <td>{{ post.text|truncatechars:20 }}</td>
-               <td>{{ post.created }}</td>
+               <td>{{ post.created|date:'d M Y H: i' }} </td>
+               <td>{{ post.text|censor|truncatechars:20 }} </td>
+
            </tr>
            {% endfor %}
 

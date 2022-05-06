@@ -3,10 +3,13 @@ from datetime import datetime
 from django.views.generic import ListView, DetailView
 from .models import Author, Category, Post, PostCategory, Comment
 
+
 class PostList(ListView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
+    ordering = '-created'
+
 
     # Метод get_context_data позволяет нам изменить набор данных,
     # который будет передан в шаблон.
